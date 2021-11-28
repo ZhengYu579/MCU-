@@ -17,8 +17,6 @@ extern "C"
 #ifndef __HAL_C__
 #define __HAL_C__
 
-#include "halComType.h"
-#include "halComCfg.h"
 #include "hal.h"
 
 static HAL_ConfigType *pHAL = NULL;
@@ -90,7 +88,7 @@ HAL_ComReturnType HAL_RegisterNotifycation(uint8_t module, HAL_ComCallBack CallB
         {
             if (NULL != CallBack)
             {
-                pHAL->pModules[module]->notifycation = CallBack;
+                pHAL->pModules[module]->notifycation->func = CallBack;
                 ret = HAL_SUC;
             }
         }

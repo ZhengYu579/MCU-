@@ -17,6 +17,8 @@ extern "C"
 #ifndef __HAL_COMMON_Config_H__
 #define __HAL_COMMON_Config_H__
 
+#include "halComType.h"
+
 /** 模块定义 **/
 #define HAL_Module_DIO (0)
 

@@ -40,6 +40,12 @@ typedef enum
  */
 typedef HAL_ComReturnType (*HAL_ComCallBack)(uint32_t notifyCategory, void *arg);
 
+typedef struct
+{
+    HAL_ComCallBack func;
+    void *moduleData;
+}HAL_ModuleNotifyType;
+
 /**
  * @brief HAL层模块配置类型
  * 
@@ -49,8 +55,8 @@ typedef struct
     HAL_ComReturnType (*Init)(void);                    ///< 初始化函数指针
     HAL_ComReturnType (*DeInit)(void);                  ///< 反初始化函数指针
     HAL_ComReturnType (*Control)(uint32_t, void *);     ///< 控制函数指针
-    HAL_ComCallBack notifycation;                       ///< 通知回调函数指针
     void (*MainFunction)(void);                         ///< 主功能函数指针
+    HAL_ModuleNotifyType *notifycation;                 ///< 通知结构体
 } HAL_ModuleConfigType;
 
 /**
