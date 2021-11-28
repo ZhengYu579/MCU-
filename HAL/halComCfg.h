@@ -9,10 +9,10 @@
  * 
  */
 
-// #ifdef __cplusplus
-// extern "C"
-// {
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
 
 #ifndef __HAL_COMMON_Config_H__
 #define __HAL_COMMON_Config_H__
@@ -29,6 +29,6 @@
 
 #endif /* __HAL_COMMON_Config_H__ */
 
-// #ifdef __cplusplus
-// }
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */

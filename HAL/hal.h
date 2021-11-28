@@ -9,10 +9,10 @@
  * 
  */
 
-// #ifdef __cplusplus
-// extern "C"
-// {
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
 
 #ifndef __HAL_H__
 #define __HAL_H__
@@ -32,6 +32,6 @@ void HAL_MainFunction(void);
 
 #endif /* __HAL_H__ */
 
-// #ifdef __cplusplus
-// }
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */

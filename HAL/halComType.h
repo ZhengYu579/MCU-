@@ -9,10 +9,10 @@
  * 
  */
 
-// #ifdef __cplusplus
-// extern "C"
-// {
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
 
 #ifndef __HAL_COMMON_TYPE_H__
 #define __HAL_COMMON_TYPE_H__
@@ -44,6 +44,7 @@ typedef struct
     HAL_ComReturnType (*Init)(void);                    ///< 初始化函数指针
     HAL_ComReturnType (*DeInit)(void);                  ///< 反初始化函数指针
     HAL_ComReturnType (*Control)(uint32_t, void *);     ///< 控制函数指针
+    HAL_ComCallBack notifycation;                       ///< 通知回调函数指针
     void (*MainFunction)(void);                         ///< 主功能函数指针
 } HAL_ModuleConfigType;
 
@@ -59,6 +60,6 @@ typedef struct
 
 #endif /* __HAL_COMMON_TYPE_H__ */
 
-// #ifdef __cplusplus
-// }
-// #endif /* __cplusplus */
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
