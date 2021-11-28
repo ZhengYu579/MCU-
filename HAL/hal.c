@@ -19,6 +19,7 @@ extern "C"
 
 #include "halComType.h"
 #include "halComCfg.h"
+#include "hal.h"
 
 static HAL_ConfigType *pHAL = NULL;
 
@@ -72,7 +73,7 @@ HAL_ComReturnType HAL_Control(uint8_t module, uint32_t command, void *args)
         {
             if (NULL != pHAL->pModules[module]->Control)
             {
-                ret = pHAL->pModules[module]->Control(Command, args);
+                ret = pHAL->pModules[module]->Control(command, args);
             }
         }
     }
@@ -105,9 +106,9 @@ void HAL_MainFunction(void)
     {
         for (i = 0; i < pHAL->HalModule_Num; i++)
         {
-            if (NULL != pHAL->pModules[i]->MianFunction)
+            if (NULL != pHAL->pModules[i]->MainFunction)
             {
-                ret = pHAL->pModules[i]->MianFunction();
+                pHAL->pModules[i]->MainFunction();
             }
         }
     }

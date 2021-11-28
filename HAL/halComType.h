@@ -18,6 +18,11 @@ extern "C"
 #define __HAL_COMMON_TYPE_H__
 
 #include <stdint.h>
+#include <stdlib.h>
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 /**
  * @brief HAL层共通返回状态类型
